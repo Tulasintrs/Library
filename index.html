@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyLibrary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>📚 MyLibrary</h2>
+    <div class="nav-links">
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('books')">Books</a>
+        <a onclick="showPage('issued')">Issued Books</a>
+        <a onclick="showPage('about')">About</a>
+        <a onclick="showPage('contact')">Contact</a>
+        <a id="loginLink" onclick="showPage('login')">Login</a>
+        <a id="logoutBtn" onclick="logout()" style="display:none;">Logout</a>
+    </div>
+</div>
+
+<!-- HOME -->
+<div id="home" class="page active">
+    <div class="hero">
+        <h1>Welcome to MyLibrary</h1>
+        <p>Your Digital Knowledge Hub</p>
+    </div>
+
+    <h3>Why Choose Us?</h3>
+    <ul>
+        <li>📖 Large collection of books</li>
+        <li>🕒 Easy issue & return</li>
+        <li>💻 Digital access</li>
+    </ul>
+</div>
+
+<!-- SIGNUP -->
+<div id="signup" class="page auth">
+    <h2>Signup</h2>
+    <input id="sname" placeholder="Full Name">
+    <input id="semail" placeholder="Email">
+    <input id="spass" type="password" placeholder="Password">
+    <input id="scpass" type="password" placeholder="Confirm Password">
+    <button onclick="signup()">Register</button>
+    <p id="smsg"></p>
+</div>
+
+<!-- LOGIN -->
+<div id="login" class="page auth">
+    <h2>Login</h2>
+    <input id="lemail" placeholder="Email">
+    <input id="lpass" type="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p id="lmsg"></p>
+    <p class="link" onclick="showPage('signup')">New user? Signup</p>
+</div>
+
+<!-- BOOKS -->
+<div id="books" class="page">
+    <h2>Library Books</h2>
+
+    <input placeholder="Search by title or author" onkeyup="searchBooks(this.value)">
+
+    <div id="bookList" class="cards"></div>
+</div>
+
+<!-- ISSUED BOOKS -->
+<div id="issued" class="page">
+    <h2>Issued Books</h2>
+    <div id="issuedList"></div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="page">
+    <h2>About Library</h2>
+    <p>MyLibrary was established to promote reading and knowledge.</p>
+    <p><b>Mission:</b> Easy access to books</p>
+    <p><b>Rules:</b> Max 2 books per user</p>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page auth">
+    <h2>Contact Us</h2>
+    <input id="cname" placeholder="Name">
+    <input id="cemail" placeholder="Email">
+    <textarea id="cmsg" placeholder="Message"></textarea>
+    <button onclick="contact()">Submit</button>
+    <p id="cstatus"></p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>📍 MyLibrary, India</p>
+    <p>🕘 Mon–Sat | 9AM–6PM</p>
+    <p>📧 support@mylibrary.com</p>
+    <p>© 2026 MyLibrary</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
